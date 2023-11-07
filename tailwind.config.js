@@ -12,7 +12,36 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        //light mode
+        'bg-app': '#FBFDFF', // (nuance 1)
+        'bg-subtle': '#F4FAFF', // Subtile BG for UI elements (nuance 2)
+        'bg-ui': '#E6F4FE', // BG for UI elements (nuance 3)
+        'bg-ui-hover': '#009EFF2A', // BG for UI elements Hover (nuance 4)
+        'bg-ui-active': '#C2E5FF', // BG for UI elements active/selected (nuance 5)
+        'border-subtle': '#ACD8FC', // Subtile border and divider (nuance 6)
+        'border-ui': '#8EC8F6', // Borders for UI elements and focus ring (nuance 7)
+        'border-ui-hover': '#0084E6A1', // Borders for UI elements Hover (nuance 8)
+        'bg-solid': '#0090FF', // Solid BG (nuance 9)
+        'bg-solid-hover': '#0588F0', // Solid BG Hover (nuance 10)
+        'text-low': '#0D74CE', // Text low contrast (nuance 11)
+        'text-high': '#113264', // Text high contrast (nuance 12)
+        //dark mode
+        'dark-bg-app': '#0D1520',
+        'dark-bg-subtle': 'rgba(17,25,39,0.6)',
+        'dark-bg-ui': '#0D2847',
+        'dark-bg-ui-hover': '#003362',
+        'dark-bg-ui-active': '#004074',
+        'dark-border-subtle': '#104D87',
+        'dark-border-ui': '#205D9E',
+        'dark-border-ui-hover': '#3094FEB9',
+        'dark-bg-solid': '#0090FF',
+        'dark-bg-solid-hover': '#3B9EFF',
+        'dark-text-low': '#70B8FF',
+        'dark-text-high': '#C2E6FF',
+      },
     },
   },
+  darkMode: 'class',
   plugins: [],
 }

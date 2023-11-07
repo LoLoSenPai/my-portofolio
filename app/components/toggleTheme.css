@@ -1,0 +1,81 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --lightGrey: #666;
+  --mediumGrey: #444;
+  --darkGrey: #333;
+  --lightBlue: #5197c4;
+  --darkBlue: #2c4e63;
+  --purple: #27173a;
+  --yellow: #ffc207;
+}
+
+.toggle {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle input:checked ~ span {
+  border-color: var(--darkGrey);
+  background: var(--darkBlue);
+}
+
+.toggle input:checked ~ span:before {
+  left: 3.4rem;
+  box-shadow: inset -0.3rem 0rem 0 0.15rem var(--yellow);
+  background: transparent;
+}
+
+.toggle input:checked ~ span:after {
+  content: "\2605";
+  top: 0.2rem;
+  left: 3.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--yellow);
+}
+
+.toggle span {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 6rem;
+  height: 3rem;
+  border-radius: 3rem;
+  border: 0.25rem solid var(--lightGrey);
+  background: var(--lightBlue);
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: pointer;
+}
+
+.toggle span:before {
+  content: "";
+  position: absolute;
+  top: 0.3rem;
+  left: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  box-shadow: inset -2rem -2rem 0 0 var(--yellow);
+  transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+.toggle span:after {
+  content: "\2601";
+  position: absolute;
+  top: 0;
+  left: 0.3rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  color: var(--white);
+  font-size: 2.6rem;
+  transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
+}
