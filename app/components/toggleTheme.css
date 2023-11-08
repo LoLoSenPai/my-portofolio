@@ -11,7 +11,7 @@
 }
 
 .toggle {
-  position: absolute;
+  position: fixed;
   top: 50px;
   right: 50px;
   transform: translate(-50%, -50%);
