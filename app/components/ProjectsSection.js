@@ -5,7 +5,7 @@ export default function ProjectsSection() {
     const projects = [
         {
             title: "Ogronex NFT Project",
-            description: "Learn coding can be fun. I create my own platform to learn that I use to teach my students.",
+            description: "Ogronex is a NFT project on the Solana & Polygon blockchains. Include NFT Raffles, Launchpad, DAO dapp and some discord bots.",
             icons: [
                 '/icons/ogronex-logo.png',
                 '/icons/nextjs-logo.svg',
@@ -14,11 +14,11 @@ export default function ProjectsSection() {
             ],
             technologies: ["NextJS", "Tailwind", "Prisma"],
             link: "https://ogronex.com",
-            github: "https://github.com/LoLoSenPai/ogronex-solana"
+            github: "https://github.com/LoLoSenPai/launchpad-ogronex"
         },
         {
             title: "Discord Alert Bot",
-            description: "Transform your words into code. He create a Playground where you can edit the generated AI Code.",
+            description: "This bot fetch data from the BigTime marketplace, and send a discord embed when the floor price of an item drops below a certain threshold.",
             icons: [
                 '/icons/discord-logo.svg',
                 '/icons/javascript-logo.svg',
@@ -29,7 +29,7 @@ export default function ProjectsSection() {
         },
         {
             title: "E-Commerce Website",
-            description: "Create open question that will be automatically corrected with AI.",
+            description: "E-Commerce website, integrating Stripe payments.",
             icons: [
                 '/icons/oryon-logo.webp',
                 '/icons/react-logo.svg',
