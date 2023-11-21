@@ -14,9 +14,9 @@ module.exports = {
       },
       colors: {
         //light mode
-        'bg-app': '#FBFDFF', // (nuance 1)
-        'bg-subtle': '#F4FAFF', // Subtile BG for UI elements (nuance 2)
-        'bg-ui': '#E6F4FE', // BG for UI elements (nuance 3)
+        'bg-app': '#F4FAFF', // (nuance 1)
+        'bg-subtle': '#E6F4FE', // Subtile BG for UI elements (nuance 2)
+        'bg-ui': '#D5EFFF', // BG for UI elements (nuance 3)
         'bg-ui-hover': '#009EFF2A', // BG for UI elements Hover (nuance 4)
         'bg-ui-active': '#C2E5FF', // BG for UI elements active/selected (nuance 5)
         'border-subtle': '#ACD8FC', // Subtile border and divider (nuance 6)
@@ -27,10 +27,10 @@ module.exports = {
         'text-low': '#0D74CE', // Text low contrast (nuance 11)
         'text-high': '#113264', // Text high contrast (nuance 12)
         //dark mode
-        'dark-bg-app': '#0D1520',
-        'dark-bg-subtle': 'rgba(17,25,39,0.6)',
-        'dark-bg-ui': '#0D2847',
-        'dark-bg-ui-hover': '#003362',
+        'dark-bg-app': '#111927',
+        'dark-bg-subtle': '#0D2847',
+        'dark-bg-ui': '#0077FF3A',
+        'dark-bg-ui-hover': '#0075FF57',
         'dark-bg-ui-active': '#004074',
         'dark-border-subtle': '#104D87',
         'dark-border-ui': '#205D9E',

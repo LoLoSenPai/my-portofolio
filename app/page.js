@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col gap-10 max-w-[1200px] mx-auto pb-40">
+    <main className="flex flex-col gap-10 max-w-[1200px] mx-auto md:pb-5 lg:pb-32">
       <HeroSection />
       <SkillsSection />
       <ProjectsSection />

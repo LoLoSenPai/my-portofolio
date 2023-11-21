@@ -29,15 +29,15 @@ export default function ProjectsSection() {
     ];
 
     return (
-        <div className="space-y-12 bg-bg-subtle dark:bg-dark-bg-subtle backdrop-blur-sm rounded-xl p-12">
-            <h2 data-aos="fade-up" data-aos-delay="50" className="text-center text-4xl font-bold">Projects</h2>
+        <div className="p-12 space-y-12 bg-bg-subtle dark:bg-dark-bg-subtle backdrop-blur-sm md:rounded-xl">
+            <h2 data-aos="fade-up" data-aos-delay="50" className="text-4xl font-bold text-center">Projects</h2>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                 {projects.map((project, index) => (
-                    <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`} className="space-y-4 rounded-lg p-6 bg-bg-ui dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover">
+                    <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`} className="p-6 space-y-4 rounded-lg bg-bg-ui dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover">
                         <div className="flex items-center justify-between">
                             <span className="text-2xl">{project.icons[0]}</span>
-                            <span className="flex text-2xl space-x-5">
+                            <span className="flex space-x-5 text-2xl">
                                 {project.link &&
                                     <a href={project.link} target="_blank">
                                         <TbWorldWww />
@@ -50,10 +50,10 @@ export default function ProjectsSection() {
                         </div>
                         <h3 className="text-2xl font-semibold">{project.title}</h3>
                         <p className="text-text-low dark:text-dark-text-low">{project.description}</p>
-                        <ul className="mt-4 flex space-x-2">
+                        <ul className="flex mt-4 space-x-2">
                             {project.technologies.map((tech, idx) => (
                                 <li key={idx} className="">
-                                    <div className='inline-flex items-center justify-center rounded-full border border-border-ui dark:border-dark-border-ui bg-bg-solid dark:bg-dark-bg-solid pl-1 pr-3 py-1 text-xs font-medium backdrop-blur-3xl'>
+                                    <div className='inline-flex items-center justify-center py-1 pl-1 pr-3 text-xs font-medium border rounded-full border-border-ui dark:border-dark-border-ui bg-bg-solid dark:bg-dark-bg-solid backdrop-blur-3xl'>
                                         <div className='space-x-1'>
                                             <span className="">{project.icons[idx + 1]}</span>
                                             <span className="">{tech}</span>

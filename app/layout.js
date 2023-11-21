@@ -1,12 +1,13 @@
 import { Inter } from 'next/font/google'
 import ThemeToggle from "./components/toggleTheme"
+import './components/toggleTheme.css'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Loic Dlugosz Portfolio',
-  description: 'My portfolio website.',
+  description: 'My portfolio.',
 }
 
 export default function RootLayout({ children }) {
