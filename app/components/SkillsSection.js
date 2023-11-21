@@ -4,7 +4,7 @@ export default function SkillsSection() {
     <div className="p-12 space-y-12 bg-bg-subtle dark:bg-dark-bg-subtle backdrop-blur-sm md:rounded-xl">
       <h2 data-aos="fade-up" data-aos-delay="50" className="text-4xl font-bold text-center">Skills</h2>
 
-      <div className="grid grid-cols-2 justify-items-center lg:space-x-4 lg:gap-6 sm:grid-cols-4 lg:p-12">
+      <div className="grid grid-cols-2 gap-y-8 justify-items-center lg:space-x-4 lg:gap-6 sm:grid-cols-4 lg:p-12">
 
         <div className="space-y-4" data-aos="fade-up" data-aos-delay="50">
           <h3 data-aos="fade-up" data-aos-delay="50" className="inline-block text-2xl font-semibold text-transparent bg-gradient-to-r from-blue-400 via-blue-300 to-blue-500 bg-clip-text">Design</h3>

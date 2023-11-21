@@ -50,7 +50,7 @@ export default function ProjectsSection() {
                         </div>
                         <h3 className="text-2xl font-semibold">{project.title}</h3>
                         <p className="text-text-low dark:text-dark-text-low">{project.description}</p>
-                        <ul className="flex mt-4 space-x-2">
+                        <ul className="flex flex-wrap gap-2 mt-4">
                             {project.technologies.map((tech, idx) => (
                                 <li key={idx} className="">
                                     <div className='inline-flex items-center justify-center py-1 pl-1 pr-3 text-xs font-medium border rounded-full border-border-ui dark:border-dark-border-ui bg-bg-solid dark:bg-dark-bg-solid backdrop-blur-3xl'>

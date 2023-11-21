@@ -14,8 +14,9 @@ module.exports = {
       },
       colors: {
         //light mode
-        'bg-app': '#F4FAFF', // (nuance 1)
-        'bg-subtle': '#E6F4FE', // Subtile BG for UI elements (nuance 2)
+        'light-blue-svg': '#6B95C1',
+        'bg-app': 'rgba(244, 250, 255, 1)', // (nuance 1)
+        'bg-subtle': 'rgba(230, 244, 254, 0.4)', // Subtile BG for UI elements (nuance 2)
         'bg-ui': '#D5EFFF', // BG for UI elements (nuance 3)
         'bg-ui-hover': '#009EFF2A', // BG for UI elements Hover (nuance 4)
         'bg-ui-active': '#C2E5FF', // BG for UI elements active/selected (nuance 5)
@@ -27,8 +28,9 @@ module.exports = {
         'text-low': '#0D74CE', // Text low contrast (nuance 11)
         'text-high': '#113264', // Text high contrast (nuance 12)
         //dark mode
-        'dark-bg-app': '#111927',
-        'dark-bg-subtle': '#0D2847',
+        'dark-blue-svg': '#2A4365',
+        'dark-bg-app': 'rgba(17, 25, 39, 1)',
+        'dark-bg-subtle': 'rgba(13, 40, 71, 0.6)',
         'dark-bg-ui': '#0077FF3A',
         'dark-bg-ui-hover': '#0075FF57',
         'dark-bg-ui-active': '#004074',

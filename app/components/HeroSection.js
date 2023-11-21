@@ -19,8 +19,8 @@ const HeroSection = () => {
                             <a href="https://discord.gg/yKxqYYWS6n" target='_blank' className="rounded-full text-center w-[120px] sm:px-4 py-2 bg-bg-solid dark:bg-dark-bg-solid hover:bg-bg-solid-hover dark:hover:bg-dark-bg-solid-hover">Discord</a>
                         </div>
                     </div>
-                    <div className="relative hidden w-64 h-64 overflow-hidden rounded-full md:flex">
-                        <Image src="/images/my-bitmoji-rounded.png" alt="Loic Dlugosz" layout="fill" objectFit="cover" />
+                    <div className="relative hidden overflow-hidden rounded-full md:flex">
+                        <Image src="/images/my-photo.jpg" alt="Loic Dlugosz" objectFit="cover" width={250} height={250} className='' />
                     </div>
                 </div>
             </div>
