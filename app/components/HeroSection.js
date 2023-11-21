@@ -14,10 +14,22 @@ const HeroSection = () => {
                             FullStack Web Developer. Passionate by Web 3.0 and Blockchain.
                         </p>
                         <div className="flex flex-wrap gap-3 lg:gap-0 lg:space-y-0 lg:space-x-2 md:pt-10 ">
-                            <ButtonAnimatedGradient href="https://github.com/LoLoSenPai">Github</ButtonAnimatedGradient>
-                            <ButtonAnimatedGradient href="https://twitter.com/LoicDlugosz">Twitter</ButtonAnimatedGradient>
-                            <ButtonAnimatedGradient href="https://www.linkedin.com/in/lo%C3%AFc-dlugosz/">LinkedIn</ButtonAnimatedGradient>
-                            <ButtonAnimatedGradient href="https://discord.gg/yKxqYYWS6n">Discord</ButtonAnimatedGradient>
+                            <ButtonAnimatedGradient href="https://github.com/LoLoSenPai">
+                                <Image src='/icons/github2-logo.svg' alt="GitHub Logo" width={25} height={25} className="mr-2" />
+                                Github
+                            </ButtonAnimatedGradient>
+                            <ButtonAnimatedGradient href="https://twitter.com/LoicDlugosz" className=''>
+                                <Image src='/icons/twitter-logo.svg' alt="Twitter Logo" width={25} height={25} className="mr-2" />
+                                Twitter
+                            </ButtonAnimatedGradient>
+                            <ButtonAnimatedGradient href="https://www.linkedin.com/in/lo%C3%AFc-dlugosz/">
+                                <Image src='/icons/linkedin-logo.svg' alt="LinkedIn Logo" width={25} height={25} className="mr-2" />
+                                LinkedIn
+                            </ButtonAnimatedGradient>
+                            <ButtonAnimatedGradient href="https://discord.gg/yKxqYYWS6n">
+                                <Image src='/icons/discord2-logo.svg' alt="Discord Logo" width={25} height={25} className="mr-2" />
+                                Discord
+                            </ButtonAnimatedGradient>
                         </div>
                     </div>
                     <div className="relative hidden overflow-hidden rounded-full md:flex">

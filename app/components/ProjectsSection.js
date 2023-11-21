@@ -49,7 +49,7 @@ export default function ProjectsSection() {
             </div>
             <div className='flex items-center justify-center h-full px-3 py-2 border rounded-md border-border-ui dark:border-dark-border-ui bg-bg-subtle dark:bg-dark-bg-subtle'>
                 <div className="p-12 space-y-12 backdrop-blur-sm md:rounded-xl">
-                    <h2 data-aos="fade-up" data-aos-delay="50" className="text-4xl font-bold text-center">Projects</h2>
+                    <h2 data-aos="fade-up" data-aos-delay="50" className="text-4xl font-bold text-center">Selected Projects</h2>
 
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                         {projects.map((project, index) => (
