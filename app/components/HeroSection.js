@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import ButtonAnimatedGradient from './ButtonAnimatedGradient'
 
 const HeroSection = () => {
     return (
@@ -13,10 +14,10 @@ const HeroSection = () => {
                             FullStack Web Developer. Passionate by Web 3.0 and Blockchain.
                         </p>
                         <div className="flex flex-wrap gap-3 lg:gap-0 lg:space-y-0 lg:space-x-2 md:pt-10 ">
-                            <a href="https://github.com/LoLoSenPai" target='_blank' className="rounded-full text-center w-[120px] sm:px-4 py-2 bg-bg-solid dark:bg-dark-bg-solid hover:bg-bg-solid-hover dark:hover:bg-dark-bg-solid-hover">Github</a>
-                            <a href="https://twitter.com/LoicDlugosz" target='_blank' className="rounded-full text-center w-[120px] sm:px-4 py-2 bg-bg-solid dark:bg-dark-bg-solid hover:bg-bg-solid-hover dark:hover:bg-dark-bg-solid-hover">Twitter</a>
-                            <a href="https://www.linkedin.com/in/lo%C3%AFc-dlugosz/" target='_blank' className="rounded-full text-center w-[120px] sm:px-4 py-2 bg-bg-solid dark:bg-dark-bg-solid hover:bg-bg-solid-hover dark:hover:bg-dark-bg-solid-hover">LinkedIn</a>
-                            <a href="https://discord.gg/yKxqYYWS6n" target='_blank' className="rounded-full text-center w-[120px] sm:px-4 py-2 bg-bg-solid dark:bg-dark-bg-solid hover:bg-bg-solid-hover dark:hover:bg-dark-bg-solid-hover">Discord</a>
+                            <ButtonAnimatedGradient href="https://github.com/LoLoSenPai">Github</ButtonAnimatedGradient>
+                            <ButtonAnimatedGradient href="https://twitter.com/LoicDlugosz">Twitter</ButtonAnimatedGradient>
+                            <ButtonAnimatedGradient href="https://www.linkedin.com/in/lo%C3%AFc-dlugosz/">LinkedIn</ButtonAnimatedGradient>
+                            <ButtonAnimatedGradient href="https://discord.gg/yKxqYYWS6n">Discord</ButtonAnimatedGradient>
                         </div>
                     </div>
                     <div className="relative hidden overflow-hidden rounded-full md:flex">

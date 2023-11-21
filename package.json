@@ -16,6 +16,7 @@
     "react-icons": "^4.11.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "20.8.10",
     "@types/react": "18.2.36",
     "autoprefixer": "^10.4.16",

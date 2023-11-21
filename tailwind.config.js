@@ -42,6 +42,21 @@ module.exports = {
         'dark-text-low': '#70B8FF',
         'dark-text-high': '#C2E6FF',
       },
+      "animation": {
+        "border-width": "border-width 3s infinite alternate"
+      },
+      "keyframes": {
+        "border-width": {
+          "from": {
+            "width": "10px",
+            "opacity": "0"
+          },
+          "to": {
+            "width": "100px",
+            "opacity": "1"
+          }
+        }
+      }
     },
   },
   darkMode: 'class',
