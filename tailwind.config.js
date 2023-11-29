@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      zIndex: {
+        '-10': '-10',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -60,5 +63,5 @@ module.exports = {
     },
   },
   darkMode: 'class',
-  plugins: [],
+  plugins: [require("daisyui")],
 }

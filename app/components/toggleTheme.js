@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
+import SVGComponent from './SVGComponent';
 import './toggleTheme.css';
 
 export default function ThemeToggle() {
@@ -19,15 +20,14 @@ export default function ThemeToggle() {
     };
 
     return (
-        <div className="toggle" title="toggle dark mode">
-            <label>
-                <input
-                    type="checkbox"
-                    checked={darkMode}
-                    onChange={toggleDarkMode}
-                />
-                <span></span>
-            </label>
-        </div>
+        <label id="theme-toggle-button">
+            <input
+                type="checkbox"
+                id="toggle"
+                checked={darkMode}
+                onChange={toggleDarkMode}
+            />
+            <SVGComponent />
+        </label>
     );
 }

@@ -33,7 +33,7 @@ const HeroSection = () => {
                         </div>
                     </div>
                     <div className="relative hidden overflow-hidden rounded-full md:flex">
-                        <Image src="/images/my-photo.jpg" alt="Loic Dlugosz" objectFit="cover" width={250} height={250} className='' />
+                        <Image src="/images/my-photo.jpg" alt="Loic Dlugosz" width={250} height={250} className='' />
                     </div>
                 </div>
             </div>

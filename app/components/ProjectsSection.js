@@ -1,7 +1,12 @@
+import React, { useState } from 'react';
 import { LuCode2 } from "react-icons/lu";
 import { TbWorldWww } from "react-icons/tb";
+import ProjectModal from './ProjectModal';
 
 export default function ProjectsSection() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedProject, setSelectedProject] = useState(null);
+
     const projects = [
         {
             title: "Ogronex NFT Project",
@@ -14,7 +19,13 @@ export default function ProjectsSection() {
             ],
             technologies: ["NextJS", "Tailwind", "Prisma"],
             link: "https://ogronex.com",
-            github: "https://github.com/LoLoSenPai/launchpad-ogronex"
+            github: "https://github.com/LoLoSenPai/launchpad-ogronex",
+            screenshots: [
+                '/images/11.png',
+                '/images/22.png',
+                '/images/33.png',
+                '/images/44.png'
+            ]
         },
         {
             title: "Discord Alert Bot",
@@ -25,7 +36,10 @@ export default function ProjectsSection() {
                 '/icons/discordjs-logo.svg',
             ],
             technologies: ["JS", "Discord.js"],
-            github: "https://github.com/LoLoSenPai/Discord-Bot-BigTime"
+            github: "https://github.com/LoLoSenPai/Discord-Bot-BigTime",
+            screenshots: [
+                '/images/44.png'
+            ]
         },
         {
             title: "E-Commerce Website",
@@ -38,9 +52,17 @@ export default function ProjectsSection() {
             ],
             technologies: ["React", "Express", "API"],
             link: "https://oryon-merch.com",
-            github: "https://github.com/LoLoSenPai/oryon-master"
+            github: "https://github.com/LoLoSenPai/oryon-master",
+            screenshots: [
+                '/images/55.png'
+            ]
         }
     ];
+
+    const openModal = (project) => {
+        setSelectedProject(project);
+        setIsModalOpen(true);
+    };
 
     return (
         <div className='relative'>
@@ -50,10 +72,17 @@ export default function ProjectsSection() {
             <div className='flex items-center justify-center h-full px-3 py-2 border rounded-md border-border-ui dark:border-dark-border-ui bg-bg-subtle dark:bg-dark-bg-subtle'>
                 <div className="p-12 space-y-12 backdrop-blur-sm md:rounded-xl">
                     <h2 data-aos="fade-up" data-aos-delay="50" className="text-4xl font-bold text-center">Selected Projects</h2>
-
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                         {projects.map((project, index) => (
-                            <div key={index} data-aos="fade-up" data-aos-delay={`${index * 100}`} className="p-6 space-y-4 rounded-lg bg-bg-ui dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover">
+                            <div
+                                key={index}
+                                data-aos="fade-up"
+                                data-aos-delay={`${index * 100}`}
+                                onClick={() => openModal(project)}
+                                onKeyPress={(e) => e.key === 'Enter' && openModal(project)}
+                                tabIndex={0}
+                                aria-label={`Open project ${project.title}`}
+                                className="p-6 space-y-4 rounded-lg bg-bg-ui dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover">
                                 <div className="flex items-center justify-between">
                                     <img src={project.icons[0]} className="w-auto h-[40px]" />
                                     <span className="flex space-x-5 text-2xl">
@@ -81,6 +110,13 @@ export default function ProjectsSection() {
                         ))}
                     </div>
                 </div>
+                {selectedProject && (
+                    <ProjectModal
+                        project={selectedProject}
+                        isOpen={isModalOpen}
+                        onClose={() => setIsModalOpen(false)}
+                    />
+                )}
             </div>
         </div>
     );

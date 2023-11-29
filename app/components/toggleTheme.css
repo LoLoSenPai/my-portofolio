@@ -1,98 +1,86 @@
-:root {
-  --white: #fff;
-  --black: #000;
-  --lightGrey: #666;
-  --mediumGrey: #444;
-  --darkGrey: #333;
-  --lightBlue: #5197c4;
-  --darkBlue: #2c4e63;
-  --purple: #27173a;
-  --yellow: #ffc207;
-}
-
-.toggle {
+/* The switch - the box around the slider */
+#theme-toggle-button {
+  font-size: 10px;
   position: fixed;
-  top: 50px;
-  right: 50px;
-  transform: translate(-50%, -50%);
-  overflow: visible;
-  z-index: 100;
-}
-
-.toggle input {
-  display: none;
-}
-
-.toggle input:checked ~ span {
-  border-color: var(--darkGrey);
-  background: var(--darkBlue);
-}
-
-.toggle input:checked ~ span:before {
-  left: 3.4rem;
-  box-shadow: inset -0.3rem 0rem 0 0.15rem var(--yellow);
-  background: transparent;
-}
-
-.toggle input:checked ~ span:after {
-  content: "\2605";
-  top: 0.2rem;
-  left: 3.3rem;
-  width: 1.5rem;
-  height: 1.5rem;
-  font-size: 1.5rem;
-  color: var(--yellow);
-}
-
-.toggle span {
-  position: relative;
   display: inline-block;
-  vertical-align: middle;
-  width: 6rem;
-  height: 3rem;
-  border-radius: 3rem;
-  border: 0.25rem solid var(--lightGrey);
-  background: var(--lightBlue);
-  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  right: 40px;
+  width: 7em;
   cursor: pointer;
+  z-index: 1000;
 }
 
-.toggle span:before {
-  content: "";
-  position: absolute;
-  top: 0.3rem;
-  left: 0.3rem;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  box-shadow: inset -2rem -2rem 0 0 var(--yellow);
-  transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
+/* Hide default HTML checkbox */
+#toggle {
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.toggle span:after {
-  content: "\2601";
-  position: absolute;
-  top: 0;
-  left: 0.3rem;
-  width: 0.2rem;
-  height: 0.2rem;
-  color: var(--white);
-  font-size: 2.6rem;
-  transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
+#container,
+#patches,
+#stars,
+#button,
+#sun,
+#moon,
+#cloud {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.25s;
 }
 
-/* Responsive for mobile */
-/* toggle stay at the right side of the screen */
-@media (max-width: 768px) {
-  .toggle {
-    right: -20px;
-    position: absolute;
+/* night sky background */
+#toggle:checked + svg #container {
+  fill: #2b4360;
+}
+
+/* move button to right when checked */
+#toggle:checked + svg #button {
+  transform: translate(28px, 2.333px);
+}
+
+/* show/hide sun and moon based on checkbox state */
+#sun {
+  opacity: 1;
+}
+
+#toggle:checked + svg #sun {
+  opacity: 0;
+}
+
+#moon {
+  opacity: 0;
+}
+
+#toggle:checked + svg #moon {
+  opacity: 1;
+}
+
+/* show or hide background items on checkbox state */
+#cloud {
+  opacity: 1;
+}
+
+#toggle:checked + svg #cloud {
+  opacity: 0;
+}
+
+#stars {
+  opacity: 0;
+}
+
+#toggle:checked + svg #stars {
+  opacity: 1;
+}
+
+/* RESPONSIVE */
+@media (min-width: 1200px) {
+  #theme-toggle-button {
+    right: 160px;
   }
 }
-
-@media (max-width: 425px) {
-  .toggle {
-    right: -40px;
-    position: absolute;
+@media (max-width: 768px) {
+  #theme-toggle-button {
+    right: 20px;
+    font-size: 8px;
   }
 }

@@ -27,7 +27,7 @@ body {
 } */
 
 body {
-  @apply text-text-high bg-bg-app;
+  @apply text-text-high bg-bg-ui;
 }
 
 .dark body {
@@ -48,7 +48,7 @@ body {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   text-align: center;
   border-radius: 6px;
