@@ -30,6 +30,7 @@ module.exports = {
         'bg-solid-hover': '#0588F0', // Solid BG Hover (nuance 10)
         'text-low': '#0D74CE', // Text low contrast (nuance 11)
         'text-high': '#113264', // Text high contrast (nuance 12)
+        'bg-modal': 'rgba(230, 244, 254, 0.8)',
         //dark mode
         'dark-blue-svg': '#2A4365',
         'dark-bg-app': 'rgba(17, 25, 39, 1)',
@@ -44,6 +45,7 @@ module.exports = {
         'dark-bg-solid-hover': '#3B9EFF',
         'dark-text-low': '#70B8FF',
         'dark-text-high': '#C2E6FF',
+        'dark-bg-modal': 'rgba(13, 40, 71, 0.9)',
       },
       "animation": {
         "border-width": "border-width 3s infinite alternate"

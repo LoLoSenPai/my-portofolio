@@ -26,7 +26,7 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
             tabIndex={0}
             aria-label="Close modal"
         >
-            <div className="relative w-full max-w-lg p-6 rounded-md bg-bg-subtle dark:bg-dark-bg-subtle">
+            <div className="relative w-full max-w-lg p-6 rounded-md bg-bg-modal dark:bg-dark-bg-modal">
                 <h2 className="mb-3 text-xl font-bold text-center">{project.title}</h2>
                 <div className="w-full rounded-xl carousel">
                     {project.screenshots.map((screenshot, index) => (
