@@ -29,7 +29,7 @@ export default function ProjectsSection() {
         },
         {
             title: "Discord Alert Bot",
-            description: "This bot fetch data from the BigTime marketplace, and send a discord embed when the floor price of an item drops below a certain threshold.",
+            description: "This bot fetch data from the BigTime marketplace, compare it with the database, and send a discord embed when the floor price of an item drops below a certain threshold.",
             icons: [
                 '/icons/discord-logo.svg',
                 '/icons/javascript-logo.svg',
@@ -38,7 +38,7 @@ export default function ProjectsSection() {
             technologies: ["JS", "Discord.js"],
             github: "https://github.com/LoLoSenPai/Discord-Bot-BigTime",
             screenshots: [
-                '/images/44.png'
+                '/images/66.png'
             ]
         },
         {
@@ -78,13 +78,11 @@ export default function ProjectsSection() {
                                 key={index}
                                 data-aos="fade-up"
                                 data-aos-delay={`${index * 100}`}
-                                onClick={() => openModal(project)}
-                                onKeyPress={(e) => e.key === 'Enter' && openModal(project)}
-                                tabIndex={0}
+                                // tabIndex={0}
                                 aria-label={`Open project ${project.title}`}
                                 className="p-6 space-y-4 rounded-lg bg-bg-ui dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover">
                                 <div className="flex items-center justify-between">
-                                    <img src={project.icons[0]} className="w-auto h-[40px]" />
+                                    <img src={project.icons[0]} alt='icon technology' className="w-auto h-[40px]" />
                                     <span className="flex space-x-5 text-2xl">
                                         {project.link &&
                                             <a href={project.link} target="_blank">
@@ -96,7 +94,10 @@ export default function ProjectsSection() {
                                             </a>}
                                     </span>
                                 </div>
-                                <h3 className="text-2xl font-semibold">{project.title}</h3>
+                                <button
+                                    onClick={() => openModal(project)}
+                                    onKeyDown={(e) => e.key === 'Enter' && openModal(project)}
+                                    className="text-2xl font-semibold cursor-pointer">{project.title}</button>
                                 <p className="text-text-low dark:text-dark-text-low">{project.description}</p>
                                 <ul className="flex flex-wrap gap-2 mt-4">
                                     {project.technologies.map((tech, idx) => (
