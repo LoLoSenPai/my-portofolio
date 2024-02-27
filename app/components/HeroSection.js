@@ -10,7 +10,7 @@ const HeroSection = () => {
                     <div className="relative space-y-5 lg:px-6 lg:mt-20">
                         <p className="absolute text-2xl font-bold text-transparent -top-10 -left-3 bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Hey there! I&apos;m</p>
                         <h1 className="pb-4 text-4xl font-extrabold transparent md:text-6xl bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Loic DLUGOSZ</h1>
-                        <p className="py-5 text-2xl md:text-xl lg:text-3xl text-text-low dark:text-dark-text-low">
+                        <p className="py-5 text-2xl md:text-xl lg:text-3xl bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
                             FullStack Web Developer. Passionate by Web 3.0 and Blockchain.
                         </p>
                         <div className="flex flex-wrap justify-between gap-3 md:justify-normal lg:gap-0 lg:space-y-0 lg:space-x-2 md:pt-10 ">
