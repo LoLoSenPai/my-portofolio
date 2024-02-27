@@ -6,7 +6,7 @@ export default function SkillsSection() {
       <div className='absolute top-0 flex justify-center w-full'>
         <div className='left-0 h-[1px] animate-border-width rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-white to-[rgba(17,17,17,0)] transition-all duration-1000' />
       </div>
-      <div className='flex items-center justify-center h-full px-3 py-2 border rounded-md border-border-ui dark:border-dark-border-ui bg-bg-subtle dark:bg-dark-bg-subtle'>
+      <div className='flex items-center justify-center h-full px-3 py-2 border rounded-md border-border-ui dark:border-dark-border-ui bg-bg-ui/30 dark:bg-dark-bg-subtle'>
         <div className="p-12 space-y-12 backdrop-blur-sm md:rounded-xl">
           <h2 data-aos="fade-up" data-aos-delay="50" className="text-4xl font-bold text-center">Skills</h2>
 
