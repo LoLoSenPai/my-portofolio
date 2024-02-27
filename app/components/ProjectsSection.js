@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { LuCode2 } from "react-icons/lu";
 import { TbWorldWww } from "react-icons/tb";
 import ProjectModal from './ProjectModal';
+import { AnimatedTooltip } from './ui/animated-tooltip';
 
 export default function ProjectsSection() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -80,24 +81,35 @@ export default function ProjectsSection() {
                                 data-aos-delay={`${index * 100}`}
                                 // tabIndex={0}
                                 aria-label={`Open project ${project.title}`}
-                                className="p-6 space-y-4 rounded-lg bg-bg-ui dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover">
+                                className="p-6 space-y-4 rounded-lg bg-bg-ui/40 dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover">
                                 <div className="flex items-center justify-between">
                                     <img src={project.icons[0]} alt='icon technology' className="w-auto h-[40px]" />
                                     <span className="flex space-x-5 text-2xl">
                                         {project.link &&
-                                            <a href={project.link} target="_blank">
-                                                <TbWorldWww />
-                                            </a>}
+                                            <AnimatedTooltip text="Explore the Live Version" positionContext='icon'>
+                                                <a href={project.link} target="_blank">
+                                                    <TbWorldWww />
+                                                </a>
+                                            </AnimatedTooltip>
+                                        }
                                         {project.github &&
-                                            <a href={project.github} target="_blank">
-                                                <LuCode2 />
-                                            </a>}
+                                            <AnimatedTooltip text="View the Code on GitHub" positionContext='icon'>
+                                                <a href={project.github} target="_blank">
+                                                    <LuCode2 />
+                                                </a>
+                                            </AnimatedTooltip>
+                                        }
                                     </span>
                                 </div>
-                                <button
-                                    onClick={() => openModal(project)}
-                                    onKeyDown={(e) => e.key === 'Enter' && openModal(project)}
-                                    className="text-2xl font-semibold cursor-pointer">{project.title}</button>
+                                <AnimatedTooltip text="Learn More About the Project" positionContext='title'>
+                                    <button
+                                        onClick={() => openModal(project)}
+                                        onKeyDown={(e) => e.key === 'Enter' && openModal(project)}
+                                        className="text-2xl font-semibold cursor-pointer"
+                                    >
+                                        {project.title}
+                                    </button>
+                                </AnimatedTooltip>
                                 <p className="text-text-low dark:text-dark-text-low">{project.description}</p>
                                 <ul className="flex flex-wrap gap-2 mt-4">
                                     {project.technologies.map((tech, idx) => (
