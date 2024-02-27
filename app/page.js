@@ -6,7 +6,8 @@ import HeroSection from './components/HeroSection';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react'
-import SVGBackground from './components/SVGBackground';
+// import SVGBackground from './components/SVGBackground';
+import { WavyBackground } from './components/ui/wavy-background';
 
 export default function Home() {
 
@@ -21,7 +22,7 @@ export default function Home() {
 
   return (
     <>
-      <SVGBackground />
+      <WavyBackground />
       <main className="relative z-10 flex flex-col gap-10 max-w-[1200px] mx-auto p-4 md:pb-5 lg:pb-32">
         <HeroSection />
         <SkillsSection />
