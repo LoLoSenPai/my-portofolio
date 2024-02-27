@@ -5,7 +5,7 @@ import ButtonAnimatedGradient from './ButtonAnimatedGradient'
 const HeroSection = () => {
     return (
         <section className="container grid items-center pt-6 pb-8 md:pt-20 gap-y-36 lg:pb-20 xl:pt-40">
-            <div className="relative px-8 pt-20 md:p-12">
+            <div className="relative px-2 pt-20 sm:px-8 md:p-12">
                 <div className="flex flex-col-reverse items-center md:flex-row">
                     <div className="relative space-y-5 lg:px-6 lg:mt-20">
                         <p className="absolute text-2xl font-bold text-transparent -top-10 -left-3 bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">Hey there! I&apos;m</p>
@@ -13,7 +13,7 @@ const HeroSection = () => {
                         <p className="py-5 text-2xl md:text-xl lg:text-3xl text-text-low dark:text-dark-text-low">
                             FullStack Web Developer. Passionate by Web 3.0 and Blockchain.
                         </p>
-                        <div className="flex flex-wrap gap-3 lg:gap-0 lg:space-y-0 lg:space-x-2 md:pt-10 ">
+                        <div className="flex flex-wrap justify-between gap-3 md:justify-normal lg:gap-0 lg:space-y-0 lg:space-x-2 md:pt-10 ">
                             <ButtonAnimatedGradient href="https://github.com/LoLoSenPai">
                                 <Image src='/icons/github2-logo.svg' alt="GitHub Logo" width={25} height={25} className="mr-2" />
                                 Github
