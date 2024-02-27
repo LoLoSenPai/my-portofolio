@@ -26,7 +26,7 @@ const HeroSection = () => {
                                 <Image src='/icons/linkedin-logo.svg' alt="LinkedIn Logo" width={25} height={25} className="mr-2" />
                                 LinkedIn
                             </ButtonAnimatedGradient>
-                            <ButtonAnimatedGradient href="https://discord.gg/yKxqYYWS6n">
+                            <ButtonAnimatedGradient href="https://discordapp.com/users/280514098599428097">
                                 <Image src='/icons/discord2-logo.svg' alt="Discord Logo" width={25} height={25} className="mr-2" />
                                 Discord
                             </ButtonAnimatedGradient>
