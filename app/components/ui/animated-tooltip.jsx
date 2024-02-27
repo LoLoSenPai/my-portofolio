@@ -13,10 +13,11 @@ const AnimatedTooltip = ({ text, children, positionContext }) => {
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0);
 
-  const rotate = useSpring(
-    useTransform(x, [-100, 100], [-45, 45]),
-    springConfig
-  );
+  const rotateRange = positionContext === 'title' ? [-10, 10] : [-45, 45];
+const rotate = useSpring(
+  useTransform(x, [-100, 100], rotateRange),
+  springConfig
+);
   const initialTranslateXOffset = positionContext === 'icon' ? -90 : positionContext === 'title' ? 160 : 0;
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50 + initialTranslateXOffset, 50 + initialTranslateXOffset]),
