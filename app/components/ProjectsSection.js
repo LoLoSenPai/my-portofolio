@@ -71,7 +71,7 @@ export default function ProjectsSection() {
                 <div className='left-0 h-[1px] animate-border-width rounded-full bg-gradient-to-r from-[rgba(17,17,17,0)] via-white to-[rgba(17,17,17,0)] transition-all duration-1000' />
             </div>
             <div className='flex items-center justify-center h-full px-3 py-2 border rounded-md border-border-ui dark:border-dark-border-ui bg-bg-subtle dark:bg-dark-bg-subtle'>
-                <div className="p-12 space-y-12 backdrop-blur-sm md:rounded-xl">
+                <div className="p-3 space-y-12 md:p-12 backdrop-blur-sm md:rounded-xl">
                     <h2 data-aos="fade-up" data-aos-delay="50" className="text-4xl font-bold text-center">Selected Projects</h2>
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
                         {projects.map((project, index) => (
