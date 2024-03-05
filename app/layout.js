@@ -20,9 +20,6 @@ export default function RootLayout({ children }) {
 
         {/* Apple Touch Icon */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-        {/* Manifest */}
-        <link rel="manifest" href="/site.webmanifest" />
       </Head>
       <body className={inter.className}>
         <ThemeToggle />
