@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Portfolio',
-  description: 'Portfolio of Loic Dlugosz .',
+  description: 'Loic Dlugosz Portfolio.',
 }
 
 export default function RootLayout({ children }) {
@@ -16,8 +16,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Head>
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
-
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         {/* Apple Touch Icon */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       </Head>

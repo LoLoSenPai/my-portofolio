@@ -1,0 +1,20 @@
+{
+  "short_name": "Portfolio",
+  "name": "Loic Dlugosz portfolio",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#004074",
+  "background_color": "#0077FF"
+}
