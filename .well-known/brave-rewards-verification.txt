@@ -1,0 +1,4 @@
+This is a Brave Creators publisher verification file.
+
+Domain: lololabs.vercel.app
+Token: 1a019344bd593c8c1bb8950f4ea2d2bb067d90abcecdaf0b2443e1f6e898ea89
