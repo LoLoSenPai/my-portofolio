@@ -52,7 +52,7 @@ export default function ProjectsSection() {
                 '/icons/api-logo.svg',
             ],
             technologies: ["React", "Express", "API"],
-            link: "https://oryon-merch.com",
+            link: "https://oryon-merch.lololabs.xyz",
             github: "https://github.com/LoLoSenPai/oryon-master",
             screenshots: [
                 '/images/55.png'
