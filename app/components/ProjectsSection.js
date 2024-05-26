@@ -10,6 +10,24 @@ export default function ProjectsSection() {
 
     const projects = [
         {
+            title: "Tasks reminder",
+            description: "You can track existing airdrops, add your own projects & tasks, and set reminders for them.",
+            icons: [
+                '/icons/logo-t2a.png',
+                '/icons/nextjs-logo.svg',
+                '/icons/tailwindcss-logo.svg',
+                '/icons/prisma-logo.svg',
+                '/icons/mongodb3-logo.svg',
+            ],
+            technologies: ["NextJS", "Tailwind", "Prisma", "MongoDB"],
+            link: "https://track2airdrop.lololabs.xyz/",
+            github: "https://github.com/LoLoSenPai/track2airdrop-v2",
+            screenshots: [
+                '/images/t2a.png',
+                '/images/t2a-2.png'
+            ]
+        },
+        {
             title: "Ogronex NFT Project",
             description: "Ogronex is a NFT project on the Solana & Polygon blockchains. Include NFT Raffles, Launchpad, DAO dapp and some discord bots.",
             icons: [
@@ -29,20 +47,6 @@ export default function ProjectsSection() {
             ]
         },
         {
-            title: "Discord Alert Bot",
-            description: "This bot fetch data from the BigTime marketplace, compare it with the database, and send a discord embed when the floor price of an item drops below a certain threshold.",
-            icons: [
-                '/icons/discord-logo.svg',
-                '/icons/javascript-logo.svg',
-                '/icons/discordjs-logo.svg',
-            ],
-            technologies: ["JS", "Discord.js"],
-            github: "https://github.com/LoLoSenPai/Discord-Bot-BigTime",
-            screenshots: [
-                '/images/66.png'
-            ]
-        },
-        {
             title: "E-Commerce Website",
             description: "E-Commerce website, integrating Stripe payments.",
             icons: [
@@ -57,7 +61,22 @@ export default function ProjectsSection() {
             screenshots: [
                 '/images/55.png'
             ]
-        }
+        },
+        {
+            title: "Discord Alert Bot",
+            description: "This bot fetch data from the BigTime marketplace, compare it with the database, and send a discord embed when the floor price of an item drops below a certain threshold.",
+            icons: [
+                '/icons/discord-logo.svg',
+                '/icons/javascript-logo.svg',
+                '/icons/discordjs-logo.svg',
+                '/icons/mongodb3-logo.svg',
+            ],
+            technologies: ["JS", "Discord.js", "MongoDB"],
+            github: "https://github.com/LoLoSenPai/Discord-Bot-BigTime",
+            screenshots: [
+                '/images/66.png'
+            ]
+        },
     ];
 
     const openModal = (project) => {
@@ -114,7 +133,7 @@ export default function ProjectsSection() {
                                 <ul className="flex flex-wrap gap-2 mt-4">
                                     {project.technologies.map((tech, idx) => (
                                         <li key={idx} className="tooltip group">
-                                            <img src={project.icons[idx + 1]} alt={tech} className="w-[20px] h-[20px]" />
+                                            <img src={project.icons[idx + 1]} alt={tech} className="w-[20px] h-[20px] rounded" />
                                             <span className="tooltiptext">{tech}</span>
                                         </li>
                                     ))}
