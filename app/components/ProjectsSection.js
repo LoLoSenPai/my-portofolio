@@ -86,6 +86,7 @@ export default function ProjectsSection() {
                 '/icons/tailwindcss-logo.svg',
             ],
             technologies: ["NextJS", "Tailwind"],
+            link: "https://crypto-noob.lololabs.xyz/",
             github: "https://github.com/LoLoSenPai/project",
             screenshots: [
                 '/images/web3-discovery.png'
