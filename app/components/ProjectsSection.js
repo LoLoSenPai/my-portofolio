@@ -81,7 +81,7 @@ export default function ProjectsSection() {
             title: "Web3 discovery",
             description: "A web3 discovery project, for first time users to learn about web3 and blockchain.",
             icons: [
-                '/icons/logo-t2a.png',
+                '/icons/crypto-noob.png',
                 '/icons/nextjs-logo.svg',
                 '/icons/tailwindcss-logo.svg',
             ],
