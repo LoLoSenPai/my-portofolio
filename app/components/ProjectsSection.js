@@ -77,6 +77,20 @@ export default function ProjectsSection() {
                 '/images/66.png'
             ]
         },
+        {
+            title: "Web3 discovery",
+            description: "A web3 discovery project, for first time users to learn about web3 and blockchain.",
+            icons: [
+                '/icons/logo-t2a.png',
+                '/icons/nextjs-logo.svg',
+                '/icons/tailwindcss-logo.svg',
+            ],
+            technologies: ["NextJS", "Tailwind"],
+            github: "https://github.com/LoLoSenPai/project",
+            screenshots: [
+                '/images/web3-discovery.png'
+            ]
+        },
     ];
 
     const openModal = (project) => {
