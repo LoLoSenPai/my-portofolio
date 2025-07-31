@@ -41,10 +41,10 @@ const ProjectModal = ({ project, isOpen, onClose }) => {
                 </div>
                 <p className='pt-4'>{project.description}</p>
                 <ul className="flex justify-start gap-2 mt-4">
-                    {project.technologies.map((tech, idx) => (
+                    {(project.mainIcons ? project.icons : project.icons.slice(1)).map((icon, idx) => (
                         <li key={idx} className="tooltip group">
-                            <img src={project.icons[idx + 1]} alt={tech} className="w-[20px] h-[20px]" />
-                            <span className="tooltiptext">{tech}</span>
+                            <img src={icon} alt={project.technologies[idx]} className="w-[20px] h-[20px]" />
+                            <span className="tooltiptext">{project.technologies[idx]}</span>
                         </li>
                     ))}
                 </ul>

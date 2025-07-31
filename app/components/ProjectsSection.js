@@ -92,6 +92,28 @@ export default function ProjectsSection() {
                 '/images/web3-discovery.png'
             ]
         },
+        {
+            title: "NFT Launchpad (Solana & Abstract)",
+            description: "NFT launchpads for Solana and Abstract, where users can mint, depending on the eligibility criteria.",
+            mainIcons: [
+                '/icons/toastdao-logo.png',
+                '/icons/shadow-logo.svg',
+            ],
+            icons: [
+                '/icons/nextjs-logo.svg',
+                '/icons/tailwindcss-logo.svg',
+                '/icons/web3js-logo.svg',
+            ],
+            technologies: ["NextJS", "Tailwind", "Web3.js"],
+            links: [
+                { label: "Toast DAO", url: "https://raffle.toast-dao.xyz/" },
+                { label: "Shadow Ponzi", url: "https://nft-launch.shadowponzi.com/" }
+            ],
+            screenshots: [
+                '/images/toastdao.png',
+                '/images/shadow.png'
+            ]
+        }
     ];
 
     const openModal = (project) => {
@@ -113,43 +135,59 @@ export default function ProjectsSection() {
                                 key={index}
                                 data-aos="fade-up"
                                 data-aos-delay={`${index * 100}`}
-                                // tabIndex={0}
-                                aria-label={`Open project ${project.title}`}
-                                className="p-6 space-y-4 rounded-lg bg-bg-ui/40 dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover">
-                                <div className="flex items-center justify-between">
-                                    <img src={project.icons[0]} alt='icon technology' className="w-auto h-[40px]" />
-                                    <span className="flex space-x-5 text-2xl">
-                                        {project.link &&
-                                            <AnimatedTooltip text="Explore the Live Version" positionContext='icon'>
-                                                <a href={project.link} target="_blank">
-                                                    <TbWorldWww />
-                                                </a>
-                                            </AnimatedTooltip>
-                                        }
-                                        {project.github &&
-                                            <AnimatedTooltip text="View the Code on GitHub" positionContext='icon'>
-                                                <a href={project.github} target="_blank">
-                                                    <LuCode2 />
-                                                </a>
-                                            </AnimatedTooltip>
-                                        }
-                                    </span>
+                                className="flex flex-col justify-between p-6 h-full min-h-[320px] rounded-lg bg-bg-ui/40 dark:bg-dark-bg-ui hover:bg-bg-ui-hover dark:hover:bg-dark-bg-ui-hover"
+                            >
+                                <div className="flex flex-col gap-4">
+                                    <div className="flex items-center justify-between">
+                                        <div className="flex gap-2">
+                                            {(project.mainIcons ?? [project.icons[0]]).map((icon, i) => (
+                                                <img key={i} src={icon} alt="project icon" className="w-auto h-[40px]" />
+                                            ))}
+                                        </div>
+                                        <span className="relative flex space-x-5 text-2xl">
+                                            {project.links ? (
+                                                project.links.map((item, i) => (
+                                                    <AnimatedTooltip key={i} text={item.label} positionContext="icon">
+                                                        <a href={item.url} target="_blank" rel="noopener noreferrer">
+                                                            <TbWorldWww />
+                                                        </a>
+                                                    </AnimatedTooltip>
+                                                ))
+                                            ) : project.link && (
+                                                <AnimatedTooltip text="Explore the Live Version" positionContext="icon">
+                                                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                                                        <TbWorldWww />
+                                                    </a>
+                                                </AnimatedTooltip>
+                                            )}
+                                            {project.github && (
+                                                <AnimatedTooltip text="View the Code on GitHub" positionContext="icon">
+                                                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                                                        <LuCode2 />
+                                                    </a>
+                                                </AnimatedTooltip>
+                                            )}
+                                        </span>
+                                    </div>
+
+                                    <AnimatedTooltip text="Learn More About the Project" positionContext='title'>
+                                        <button
+                                            onClick={() => openModal(project)}
+                                            onKeyDown={(e) => e.key === 'Enter' && openModal(project)}
+                                            className="text-2xl font-semibold text-left cursor-pointer"
+                                        >
+                                            {project.title}
+                                        </button>
+                                    </AnimatedTooltip>
+
+                                    <p className="text-text-low dark:text-dark-text-low">{project.description}</p>
                                 </div>
-                                <AnimatedTooltip text="Learn More About the Project" positionContext='title'>
-                                    <button
-                                        onClick={() => openModal(project)}
-                                        onKeyDown={(e) => e.key === 'Enter' && openModal(project)}
-                                        className="text-2xl font-semibold cursor-pointer"
-                                    >
-                                        {project.title}
-                                    </button>
-                                </AnimatedTooltip>
-                                <p className="text-text-low dark:text-dark-text-low">{project.description}</p>
-                                <ul className="flex flex-wrap gap-2 mt-4">
-                                    {project.technologies.map((tech, idx) => (
+
+                                <ul className="flex flex-wrap gap-2 mt-6">
+                                    {(project.mainIcons ? project.icons : project.icons.slice(1)).map((icon, idx) => (
                                         <li key={idx} className="tooltip group">
-                                            <img src={project.icons[idx + 1]} alt={tech} className="w-[20px] h-[20px] rounded" />
-                                            <span className="tooltiptext">{tech}</span>
+                                            <img src={icon} alt={project.technologies[idx]} className="w-[20px] h-[20px] rounded" />
+                                            <span className="tooltiptext">{project.technologies[idx]}</span>
                                         </li>
                                     ))}
                                 </ul>
