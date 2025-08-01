@@ -10,6 +10,9 @@ module.exports = {
       zIndex: {
         '-10': '-10',
       },
+      fontFamily: {
+        sans: ['"Google Sans Code"', 'monospace'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

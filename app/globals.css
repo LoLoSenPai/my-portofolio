@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-text-high bg-bg-ui;
-}
+@layer base {
+  body {
+    @apply font-sans text-text-high bg-bg-ui;
+  }
 
-.dark body {
-  @apply text-dark-text-high bg-dark-bg-app;
+  .dark body {
+    @apply text-dark-text-high bg-dark-bg-app;
+  }
 }
 
 .fade-in-section {
