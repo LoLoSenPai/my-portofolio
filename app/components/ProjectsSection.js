@@ -78,18 +78,22 @@ export default function ProjectsSection() {
             ]
         },
         {
-            title: "Web3 discovery",
-            description: "A web3 discovery project, for first time users to learn about web3 and blockchain.",
+            title: "Twitch Rewards to mint NFTs",
+            description: "A website where Twitch streamers can connect their Twitch account, create custom rewards, and set them up to mint NFTs on Solana when redeemed by viewers.",
             icons: [
-                '/icons/crypto-noob.png',
+                '/icons/nyls-pfp.png',
                 '/icons/nextjs-logo.svg',
                 '/icons/tailwindcss-logo.svg',
+                '/icons/mongodb3-logo.svg'
             ],
-            technologies: ["NextJS", "Tailwind"],
-            link: "https://crypto-noob.lololabs.xyz/",
-            github: "https://github.com/LoLoSenPai/project",
+            technologies: ["NextJS", "Tailwind", "MongoDB"],
+            link: "https://paninyls.lololabs.xyz/",
+            github: "https://github.com/LoLoSenPai/twitch-channel-points",
             screenshots: [
-                '/images/web3-discovery.png'
+                '/images/twitch-1.png',
+                '/images/twitch-2.png',
+                '/images/twitch-3.png',
+                '/images/twitch-4.png'
             ]
         },
         {
@@ -106,7 +110,7 @@ export default function ProjectsSection() {
             ],
             technologies: ["NextJS", "Tailwind", "Web3.js"],
             links: [
-                { label: "Toast DAO", url: "https://raffle.toast-dao.xyz/" },
+                { label: "Toast DAO", url: "https://abstract-raffle.vercel.app/" },
                 { label: "Shadow Ponzi", url: "https://nft-launch.shadowponzi.com/" }
             ],
             screenshots: [
