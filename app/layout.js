@@ -1,4 +1,5 @@
 import ThemeToggle from "./components/toggleTheme"
+import ChatWidget from "./components/ChatWidget"
 import './components/toggleTheme.css'
 import './globals.css'
 import Head from 'next/head';
@@ -33,7 +34,9 @@ export default function RootLayout({ children }) {
       </Head>
       <body className=''>
         <ThemeToggle />
-        {children}</body>
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   )
 }
