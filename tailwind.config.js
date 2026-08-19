@@ -11,7 +11,8 @@ module.exports = {
         '-10': '-10',
       },
       fontFamily: {
-        sans: ['"Google Sans Code"', 'monospace'],
+        sans: ['var(--font-body)', 'sans-serif'],
+        mono: ['var(--font-mono)', 'monospace'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -68,5 +69,5 @@ module.exports = {
     },
   },
   darkMode: 'class',
-  plugins: [require("daisyui")],
+  plugins: [],
 }

@@ -1,121 +1,87 @@
 "use client";
-import { cn } from "../../utils/cn";
-import React, { useEffect, useRef } from "react";
+
+import { useEffect, useRef } from "react";
 import { createNoise3D } from "simplex-noise";
 
-export const WavyBackground = ({
-    children,
-    className,
-    containerClassName,
-    colors,
-    waveWidth,
-    backgroundFill,
-    blur = 10,
-    speed = "slow",
-    waveOpacity = 0.5,
-    ...props
-}: {
-    children?: any;
-    className?: string;
-    containerClassName?: string;
-    colors?: string[];
-    waveWidth?: number;
-    backgroundFill?: string;
-    blur?: number;
-    speed?: "slow" | "fast";
-    waveOpacity?: number;
-    [key: string]: any;
-}) => {
+const COLORS = ["#4aa8ff", "#8b78ff", "#d073eb", "#43d9d0"];
+
+export function WavyBackground() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const context = canvas?.getContext("2d");
+
+    if (!canvas || !context) return;
+
     const noise = createNoise3D();
-    let w: number,
-        h: number,
-        nt: number,
-        i: number,
-        x: number,
-        ctx: any,
-        canvas: any;
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-    const getSpeed = () => {
-        switch (speed) {
-            case "slow":
-                return 0.001;
-            case "fast":
-                return 0.002;
-            default:
-                return 0.001;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let width = 0;
+    let height = 0;
+    let time = 0;
+    let animationFrame = 0;
+    let previousFrame = 0;
+
+    const resize = () => {
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = Math.floor(width * pixelRatio);
+      canvas.height = Math.floor(height * pixelRatio);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+    };
+
+    const draw = (timestamp = 0) => {
+      if (!reducedMotion && timestamp - previousFrame < 28) {
+        animationFrame = requestAnimationFrame(draw);
+        return;
+      }
+
+      previousFrame = timestamp;
+      context.clearRect(0, 0, width, height);
+      context.save();
+      context.globalAlpha = 0.26;
+      context.filter = "blur(11px)";
+      time += reducedMotion ? 0 : 0.0021;
+
+      COLORS.forEach((color, waveIndex) => {
+        context.beginPath();
+        context.lineWidth = 42 + waveIndex * 7;
+        context.strokeStyle = color;
+
+        for (let x = -20; x <= width + 20; x += 7) {
+          const y = noise(x / 700, waveIndex * 0.34, time) * 82;
+          const baseline = Math.min(height * 0.42, 420) + waveIndex * 17;
+
+          if (x === -20) context.moveTo(x, y + baseline);
+          else context.lineTo(x, y + baseline);
         }
+
+        context.stroke();
+      });
+
+      context.restore();
+
+      if (!reducedMotion) animationFrame = requestAnimationFrame(draw);
     };
 
-    const init = () => {
-        canvas = canvasRef.current;
-        ctx = canvas.getContext("2d");
-        w = ctx.canvas.width = window.innerWidth;
-        h = ctx.canvas.height = window.innerHeight;
-        ctx.filter = `blur(${blur}px)`;
-        nt = 0;
-        window.onresize = function () {
-            w = ctx.canvas.width = window.innerWidth;
-            h = ctx.canvas.height = window.innerHeight;
-            ctx.filter = `blur(${blur}px)`;
-        };
-        render();
+    resize();
+    draw();
+    window.addEventListener("resize", resize, { passive: true });
+
+    return () => {
+      cancelAnimationFrame(animationFrame);
+      window.removeEventListener("resize", resize);
     };
+  }, []);
 
-    const waveColors = colors ?? [
-        "#38bdf8",
-        "#818cf8",
-        "#c084fc",
-        "#e879f9",
-        "#22d3ee",
-    ];
-    const drawWave = (n: number) => {
-        nt += getSpeed();
-        for (i = 0; i < n; i++) {
-            ctx.beginPath();
-            ctx.lineWidth = waveWidth || 50;
-            ctx.strokeStyle = waveColors[i % waveColors.length];
-            for (x = 0; x < w; x += 5) {
-                var y = noise(x / 800, 0.3 * i, nt) * 100;
-                ctx.lineTo(x, y + h * 0.5); // adjust for height, currently at 50% of the container
-            }
-            ctx.stroke();
-            ctx.closePath();
-        }
-    };
-
-    let animationId: number;
-    const render = () => {
-        const isDarkMode = document.documentElement.classList.contains('dark');
-        const backgroundFill = isDarkMode ? "rgba(17, 25, 39, 1)" : "rgba(244, 250, 255, 1)";
-        ctx.fillStyle = backgroundFill || "black";
-        ctx.globalAlpha = waveOpacity || 0.5;
-        ctx.fillRect(0, 0, w, h);
-        drawWave(5);
-        animationId = requestAnimationFrame(render);
-    };
-
-    useEffect(() => {
-        init();
-        return () => {
-            cancelAnimationFrame(animationId);
-        };
-    }, []);
-
-    return (
-        <div
-            className={cn(
-                "flex flex-col items-center justify-center",
-                containerClassName
-            )}
-        >
-            <canvas
-                className="fixed inset-0 z-0 w-full h-full "
-                ref={canvasRef}
-                id="canvas"
-            ></canvas>
-            <div className={cn("relative z-10", className)} {...props}>
-                {children}
-            </div>
-        </div>
-    );
-};
+  return (
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-80 [mask-image:linear-gradient(to_bottom,black_0%,black_50%,transparent_92%)]"
+      aria-hidden="true"
+    />
+  );
+}

@@ -1,49 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Loic Dlugosz — Portfolio
 
-## Getting Started
+Personal portfolio for a fullstack developer focused on Solana, mobile products,
+games and builder tooling. Built with Next.js App Router and Tailwind CSS.
 
-First, run the development server:
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The profile, capabilities, projects and AI assistant context all come from
+`app/data/portfolio.js`. Update that file first when portfolio content changes.
 
-## AI Chatbot
+## AI assistant
 
-The portfolio includes a lightweight AI chatbot powered by the Vercel AI SDK and AI Gateway.
-
-Create a `.env.local` file at the project root:
+The embedded assistant uses the Vercel AI SDK and AI Gateway. Create a local
+`.env` or `.env.local` file:
 
 ```bash
 AI_GATEWAY_API_KEY=your_vercel_ai_gateway_key
 AI_MODEL=openai/gpt-5.4-mini
 ```
 
-`AI_MODEL` is optional and defaults to `openai/gpt-5.4-mini`. When deploying on Vercel, add `AI_GATEWAY_API_KEY` to the project environment variables. A ChatGPT Plus subscription does not include API usage; API/Gateway usage is billed separately.
+`AI_MODEL` is optional. The API route includes request-size limits, short chat
+history and a lightweight in-memory rate limit.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Validation
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The production site is available at
+[portfolio.lololabs.xyz](https://portfolio.lololabs.xyz/).

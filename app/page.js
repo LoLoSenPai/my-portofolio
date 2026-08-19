@@ -1,33 +1,21 @@
-'use client';
-
-import SkillsSection from './components/SkillsSection';
-import ProjectsSection from './components/ProjectsSection';
-import HeroSection from './components/HeroSection';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react'
-// import SVGBackground from './components/SVGBackground';
-import { WavyBackground } from './components/ui/wavy-background';
+import Footer from "./components/Footer";
+import HeroSection from "./components/HeroSection";
+import ProjectsSection from "./components/ProjectsSection";
+import SiteHeader from "./components/SiteHeader";
+import SkillsSection from "./components/SkillsSection";
+import { WavyBackground } from "./components/ui/wavy-background";
 
 export default function Home() {
-
-  useEffect(() => {
-    AOS.init({
-      duration: 200,
-      once: false,
-      easing: 'ease-in-out',
-      delay: 50,
-    });
-  }, []);
-
   return (
     <>
       <WavyBackground />
-      <main className="relative z-10 flex flex-col gap-10 max-w-[1200px] mx-auto p-4 md:pb-5 lg:pb-32">
+      <SiteHeader />
+      <main>
         <HeroSection />
-        <SkillsSection />
         <ProjectsSection />
+        <SkillsSection />
       </main>
+      <Footer />
     </>
-  )
+  );
 }

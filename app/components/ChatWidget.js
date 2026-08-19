@@ -17,9 +17,9 @@ import {
 } from "react-icons/lu";
 
 const suggestions = [
-  "What can Loic build?",
-  "Show me his AI/Web3 experience",
-  "How can I contact him?",
+  "What has Loic shipped on Solana?",
+  "Tell me about his mobile work",
+  "Which project best shows fullstack ownership?",
 ];
 
 const markdownComponents = {
@@ -62,6 +62,7 @@ export default function ChatWidget() {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
+  const triggerRef = useRef(null);
   const { messages, setMessages, sendMessage, status, error, regenerate, stop, clearError } = useChat({
     experimental_throttle: 60,
   });
@@ -76,6 +77,20 @@ export default function ChatWidget() {
   useEffect(() => {
     if (!isOpen) return;
     textareaRef.current?.focus();
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+        requestAnimationFrame(() => triggerRef.current?.focus());
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, [isOpen]);
 
   const submitMessage = async (text) => {
@@ -111,6 +126,7 @@ export default function ChatWidget() {
     <>
       {isOpen && (
         <section
+          role="dialog"
           aria-label="Portfolio AI assistant"
           className="fixed bottom-24 right-4 z-[1001] flex h-[min(620px,calc(100vh-7rem))] w-[calc(100vw-2rem)] max-w-[430px] flex-col overflow-hidden rounded-lg border border-border-ui bg-bg-app/95 shadow-2xl backdrop-blur-xl dark:border-dark-border-ui dark:bg-dark-bg-app/95 sm:right-6"
         >
@@ -141,7 +157,10 @@ export default function ChatWidget() {
               <button
                 type="button"
                 aria-label="Close chat"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  requestAnimationFrame(() => triggerRef.current?.focus());
+                }}
                 className="flex h-9 w-9 items-center justify-center rounded-md border border-transparent text-text-low transition hover:border-border-ui hover:bg-bg-ui-hover hover:text-text-high dark:text-dark-text-low dark:hover:border-dark-border-ui dark:hover:bg-dark-bg-ui-hover dark:hover:text-dark-text-high"
               >
                 <LuX aria-hidden="true" className="h-5 w-5" />
@@ -155,7 +174,7 @@ export default function ChatWidget() {
                 <div className="min-w-0 rounded-md border border-border-subtle bg-bg-ui/50 p-4 dark:border-dark-border-subtle dark:bg-dark-bg-subtle">
                   <div className="mb-3 flex min-w-0 items-center gap-2 text-sm font-semibold">
                     <LuSparkles aria-hidden="true" className="h-4 w-4 shrink-0 text-bg-solid" />
-                    Ask about Loic
+                    Ask about Loic&apos;s work
                   </div>
                   <div className="flex min-w-0 flex-wrap gap-2">
                     {suggestions.map((suggestion) => (
@@ -275,6 +294,7 @@ export default function ChatWidget() {
       )}
 
       <button
+        ref={triggerRef}
         type="button"
         aria-label={isOpen ? "Close AI assistant" : "Open AI assistant"}
         onClick={() => setIsOpen((current) => !current)}
