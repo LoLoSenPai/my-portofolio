@@ -18,7 +18,7 @@ await Promise.all([
   sharp(iconSource)
     .resize(180, 180, { fit: "cover" })
     .png({ compressionLevel: 9 })
-    .toFile(path.join(root, "app", "apple-touch-icon.png")),
+    .toFile(path.join(root, "public", "apple-touch-icon.png")),
   sharp(iconSource)
     .resize(192, 192, { fit: "cover" })
     .png({ compressionLevel: 9 })
